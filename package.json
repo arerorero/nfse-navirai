@@ -1,0 +1,22 @@
+{
+  "name": "nfse-navirai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d": "^1.0.1",
+    "D": "^1.0.0",
+    "express": "^4.18.2",
+    "puppeteer": "^20.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
