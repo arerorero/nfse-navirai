@@ -12,19 +12,6 @@ export const baixaPDF = async (user, password, nf) => {
   await page.type("#Senha", password);
   await page.click("#Botao-Entrar");
 
-  //find login error by span#Usuario-error
-  const userError = await page.$("span#Usuario-error");
-  if (userError) {
-    await browser.close();
-    return "User login error";
-  }
-  //look for <span for="Senha">A senha está incorreta.</span>
-  const passwordError = await page.$("span#Senha-error");
-  if (passwordError) {
-    await browser.close();
-    return "Password login error";
-  }
-
   // await page load
   await page.waitForNavigation();
   // await 1 second
@@ -45,11 +32,6 @@ export const baixaPDF = async (user, password, nf) => {
 
   await new Promise((r) => setTimeout(r, 1000));
 
-  const check = await page.$(".check-linha");
-  if (!check) {
-    await browser.close();
-    return "NF not found";
-  }
   await page.click(".check-linha");
 
   // Click the button that triggers the PDF download
